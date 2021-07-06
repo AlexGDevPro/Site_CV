@@ -8,8 +8,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -20,7 +20,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -91,7 +91,7 @@ html, body {
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	grid-template-rows: 3fr;
-	grid-template-areas: 
+	grid-template-areas:
 		"formations formations formations experiences experiences experiences "
 		". . identite identite . ."
 		"competences competences divers divers contacts contacts";
@@ -115,7 +115,7 @@ html, body {
 	width: 200px;
 	height: 200px;
 	position: fixed;
-	left: 45%;
+	left: 44%;
 	top: 35%;
 	margin: auto;
 	display: flex;
@@ -173,7 +173,7 @@ p.name {
 }
 
 .preface-title {
-	color: var(--primary-txt-clr);	
+	color: var(--primary-txt-clr);
 	padding: 10px;
 	border: solid 1px var(--primary-bdr-clr);
 	border-radius: 15px;
@@ -207,7 +207,7 @@ p.name {
 	margin: 10px 0;
 }
 .section-preface-title {
-	color: white;	
+	color: white;
 	padding: 10px;
 	margin: auto;
 	text-transform: uppercase;
@@ -473,7 +473,7 @@ p.name {
 			"contacts contacts contacts";
 	}
 	.container-circle {
-		left: 30%
+		left: 34%
 	}
 	#identite, #formations, #competences, #divers, #contacts {
 		height: auto;
@@ -487,6 +487,9 @@ p.name {
 @media only screen and (max-width: 470px) {
 	html, body {
 		font-size: 12px;
+	}
+	.container-circle {
+		left: 26%
 	}
 }
 

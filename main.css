@@ -1,0 +1,497 @@
+/*----------RESET----------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*-----------------------------Fin du reset--------------------------------*/
+/*GENERALITES*/
+:root {
+--primary-txt-clr: rgba(255,255,255,.9);
+--secondary-txt-clr: rgb(144, 144, 144);
+--primary-bgc-clr: rgb(0,0,0);
+--secondary-bgc-clr: linear-gradient(#549bf2, #0164E1 66%);
+--primary-bdr-clr: rgba(255,255,255,.9);
+--preface-brd-clr: 1px solid rgba(255,255,255,.9);
+--box-shadow-top-left: -10px -10px 10px rgb(255, 255, 255);
+--box-shadow-bottom-right: 10px 10px 10px rgb(255, 255, 255);
+--blur-pwr: blur(.5rem);
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-size: 16px;
+	background: var(--primary-bgc-clr);
+	color: var(--primary-txt-clr);
+	font-family: 'Lato', sans-serif;
+}
+.scroll {
+	overflow: scroll;
+	overflow-x: hidden;
+	height: 82%;
+	border-bottom: dotted grey 1px;
+}
+.blur {
+	filter: var(--blur-pwr);
+	transition: filter .3s;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+}
+.blur:hover {
+	filter: blur(0);
+}
+
+
+/*CONTAINER*/
+.container {
+	margin: auto;
+	position: relative;
+	width: 1200px;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: 3fr;
+	grid-template-areas: 
+		"formations formations formations experiences experiences experiences "
+		". . identite identite . ."
+		"competences competences divers divers contacts contacts";
+	gap: 10px;
+}
+/*PREFACE*/
+.preface {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: var(--primary-bgc-clr);
+	z-index: 5;
+	display: flex;
+	border-radius: 15px;
+}
+
+	/*GESTION DU LOGO DE LA PREFACE*/
+.container-circle {
+	width: 200px;
+	height: 200px;
+	position: fixed;
+	left: 45%;
+	top: 35%;
+	margin: auto;
+	display: flex;
+	transition: all .3s;
+}
+.container-circle:hover {
+	transform: scale(1.2);
+}
+.container-circle:hover > .circle::before, .container-circle:hover > .circle::after{
+	cursor: pointer;
+	transform: rotate(-.75turn);
+	opacity: .9;
+}
+.circle {
+	flex: none;
+	margin: auto;
+	background: var(--primary-bgc-clr);
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	color: var(--primary-txt-clr);
+	text-transform: uppercase;
+	display: flex;
+	transform: scale(2);
+	position: relative;
+}
+.circle::after, .circle::before  {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: 50%;
+	transition: all .3s;
+	opacity: .7;
+}
+.circle::before {
+	box-shadow: var(--box-shadow-top-left);
+}
+.circle::after {
+	box-shadow: var(--box-shadow-bottom-right);
+}
+p.name {
+	margin: auto 8px;
+	font-size: 65px;
+	letter-spacing: -7px;
+}
+.pattaya {
+	font-family: 'Pattaya', serif;
+}
+.dancing-script {
+	font-family: 'Dancing Script', serif;
+	font-size: 75px;
+}
+
+.preface-title {
+	color: var(--primary-txt-clr);	
+	padding: 10px;
+	border: solid 1px var(--primary-bdr-clr);
+	border-radius: 15px;
+	margin: auto;
+	text-transform: uppercase;
+	font-size: 3rem;
+	transition: transform .3s;
+}
+.preface-title:hover {
+	cursor: pointer;
+	transform: scale(1.2);
+}
+/*SECTION*/
+.section {
+	width: 100%;
+	height: 310px;
+	text-align: center;
+	position: relative;
+}
+.section-preface {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: var(--primary-bgc-clr);
+	z-index: 4;
+	display: flex;
+	border-radius: 15px;
+	border: var(--preface-brd-clr);
+	margin: 10px 0;
+}
+.section-preface-title {
+	color: white;	
+	padding: 10px;
+	margin: auto;
+	text-transform: uppercase;
+	font-size: 1.5rem;
+}
+.section-title {
+    font-size: 1.7rem;
+	font-weight: bold;
+    text-transform: uppercase;
+	margin: .8rem auto;
+	margin-top: 0;
+}
+.section-subtitle {
+    font-size: 1.2rem;
+	margin: .5rem auto;
+}
+.section-content {
+	font-size: .9rem;
+	line-height: 1.4;
+	margin: .2rem auto;
+}
+.section-first-box {
+	display: flex;
+	width: 100%;
+	height: auto;
+	justify-content: space-around;
+	align-items: baseline;
+	margin-top: 50px;
+}
+
+/*ARTICLE*/
+.article {
+	padding: 10px;
+	margin: 10px;
+}
+.article-title {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+.article-title span {
+	font-style: italic;
+}
+.article-date {
+	color: var(--secondary-txt-clr);
+	letter-spacing: .1rem;
+	margin: 5px;
+}
+.article-list-content {
+	font-size: .9rem;
+	text-align: justify;
+}
+
+/*IDs*/
+
+#experiences {
+	grid-area: experiences;
+}
+#experiences .article-list-content {
+	line-height: 1.2rem;;
+}
+#experiences .section-preface {
+	border-radius: 0 15px 15px 0;
+}
+
+#formations {
+	grid-area: formations;
+}
+#formations .article-p-content {
+	text-align: start;
+	line-height: 1.2rem;
+}
+#formations .section-preface {
+	border-radius: 15px 0 0 15px;
+}
+
+
+#identite {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 300px / 150px;
+	height: 200px;
+	width: 450px;
+	padding: 0 5px;
+	grid-area: identite;
+}
+#identite .section-title {
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+#identite .section-subtitle {
+	margin: 0 auto;
+	margin-bottom: 15px;
+}
+
+#competences {
+	grid-area: competences;
+}
+#competences .section-content {
+	text-align: left;
+	font-size: 1.1rem;
+}
+#competences .section-scd-box:last-of-type .section-subtitle {
+	text-align: left;
+}
+#competences .section-subtitle {
+	text-decoration: underline;
+	font-size: 1.5rem;
+}
+#competences .section-preface {
+	border-radius: 15px 0 0 15px;
+}
+
+#divers {
+	grid-area: divers;
+}
+#divers  .section-content {
+	font-size: 1.1rem;
+	text-align: center;
+	line-height: 2rem;
+}
+#divers .section-preface {
+	border-radius: 0;
+}
+
+#contacts {
+	grid-area: contacts;
+}
+#contacts .section-subtitle {
+	margin-top: 1rem;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+}
+#contacts .section-content {
+	text-transform: uppercase;
+}
+#contacts .section-preface {
+	border-radius: 0 15px 15px 0;
+}
+
+/*ENVELOPPE*/
+.mail-container {
+	margin: auto;
+	margin-top: 5px;
+	background-color: inherit;
+	position:relative;
+	/*Seul valeur à modifier pour la taille de l'élément*/
+	height: 50px;
+	width: 50px;
+	display: flex;
+}
+.mail-sub-container {
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	overflow: hidden;
+}
+.mail-rotation {
+	transition: transform 0.3s;
+	transform: rotate(0deg);
+}
+.mail-rotation:hover:not(:active) {
+	transform: rotate(2turn);
+}
+.mail-scale-up:active {
+	transform: scale(1.2);
+}
+.mail-couleur--beige {
+	background-color: rgb(235, 214, 177);
+}
+.mail-couleur--transparent {
+	background-color: transparent;
+}
+.mail-square {
+	width: 100%;
+	height: 80%;
+	border: 2px solid #000;
+	overflow: hidden;
+	border-radius: 5px;
+}
+.mail-triangle {
+	width: 100%;
+	height: 100%;
+	border: 2px solid #000;
+}
+.mail-triangle--down {
+	transform: rotate(45deg) translate(-41%,-39%);
+}
+@media only screen and (max-width: 1230px) {
+	.container {
+		width: 100%;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: 4fr;
+		grid-template-areas:
+			". identite identite ."
+			"formations formations experiences experiences"
+			". competences competences ."
+			"divers divers contacts contacts";
+	}
+	.container-circle {
+		left: 40%
+	}
+	.section-preface {
+		margin: 0;
+	}
+	#formations .section-preface, #divers .section-preface {
+		margin-left: 10px;
+	}
+	#experiences .section-preface, #contacts .section-preface {
+		margin-right: 10px;
+	}
+	#divers .section-preface, #contacts .section-preface {
+		margin-bottom: 10px;
+	}
+	#competences .section-preface {
+		border-radius: 15px;
+	}
+	#divers .section-preface {
+		border-radius: 15px 0 0 15px;
+	}
+}
+
+@media only screen and (max-width: 950px) {
+	.container {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: 5fr;
+		grid-template-areas:
+			". identite ."
+			"formations formations formations"
+			"experiences experiences experiences"
+			" competences competences competences"
+			"divers divers divers"
+			"contacts contacts contacts";
+	}
+	.blur {
+		filter: none;
+	}
+	.section-preface {
+		margin: 0 10px;
+	}
+	#divers .section-preface {
+		margin: 0 10px;
+	}
+	#formations .section-preface,#experiences .section-preface, #divers .section-preface, #contacts .section-preface {
+		border-radius: 15px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	html, body {
+		font-size: 14px;
+	}
+	.container {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: 6fr;
+		grid-template-areas:
+			"identite identite identite"
+			"formations formations formations"
+			"experiences experiences experiences"
+			"competences competences competences"
+			"divers divers divers"
+			"contacts contacts contacts";
+	}
+	.container-circle {
+		left: 30%
+	}
+	#identite, #formations, #competences, #divers, #contacts {
+		height: auto;
+	}
+	#identite {
+		margin: 20px 0;
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 470px) {
+	html, body {
+		font-size: 12px;
+	}
+}
+
+@media only screen and (max-width: 280px) {
+	.container {
+		width: 280px;
+	}
+}

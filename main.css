@@ -225,7 +225,7 @@ p.name {
 	margin: .5rem auto;
 }
 .section-content {
-	font-size: .9rem;
+	font-size: 1rem;
 	line-height: 1.4;
 	margin: .2rem auto;
 }
@@ -298,6 +298,7 @@ p.name {
 #identite .section-title {
 	margin: 0 auto;
 	margin-bottom: 20px;
+	text-transform:none;
 }
 #identite .section-subtitle {
 	margin: 0 auto;
@@ -342,11 +343,11 @@ p.name {
 	font-size: 1.5rem;
 	text-transform: uppercase;
 }
-#contacts .section-content {
-	text-transform: uppercase;
-}
 #contacts .section-preface {
 	border-radius: 0 15px 15px 0;
+}
+.letter-spacing{
+	letter-spacing: .2rem;
 }
 
 /*ENVELOPPE*/

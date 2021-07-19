@@ -362,6 +362,14 @@ p.name{
 	grid-area: divers;
 }
 
+.first-divers-list{
+	margin-right: 5px;
+}
+
+.section-first-box .section-subtitle{
+	text-align-last: left;
+}
+
 #divers  .section-content{
 	font-size: 1.1rem;
 	text-align: center;

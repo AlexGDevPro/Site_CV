@@ -372,6 +372,17 @@ p.name{
 	border-radius: 0;
 }
 
+#divers .section-content a{
+	color: var(--secondary-txt-clr);
+	text-decoration: none;
+	transition: all .3s;
+}
+
+#divers .section-content a:hover{
+	color: var(--primary-txt-clr);
+	text-decoration: underline;
+}
+
 /*Contacts*/
 #contacts{
 	grid-area: contacts;
